@@ -166,7 +166,7 @@ namespace Twikey
                     var responseString = response.Content.ReadAsStringAsync().Result;
                     var feed = JsonConvert.DeserializeObject<MandateFeed>(responseString);
                     messages.AddRange(feed.Messages);
-                    isEmpty = feed.Messages.Any();
+                    isEmpty = !feed.Messages.Any();
                 }
                 else
                 {
