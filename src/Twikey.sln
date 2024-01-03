@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twikey", "Twikey\Twikey.csproj", "{2BE99280-EB19-4939-8C68-154A2F94C01A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwikeyTests", "TwikeyTests\TwikeyTests.csproj", "{168586DB-370D-4CA1-B5B5-DD4063D4CF03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2BE99280-EB19-4939-8C68-154A2F94C01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BE99280-EB19-4939-8C68-154A2F94C01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BE99280-EB19-4939-8C68-154A2F94C01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168586DB-370D-4CA1-B5B5-DD4063D4CF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168586DB-370D-4CA1-B5B5-DD4063D4CF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168586DB-370D-4CA1-B5B5-DD4063D4CF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168586DB-370D-4CA1-B5B5-DD4063D4CF03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

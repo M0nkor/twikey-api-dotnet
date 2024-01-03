@@ -7,6 +7,8 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
 using Twikey.Models.Transactions;
+using System.Text;
+using System.Net.Http.Headers;
 
 namespace Twikey
 {
@@ -68,9 +70,12 @@ namespace Twikey
             request.Method = HttpMethod.Post;
             request.Headers.Add("User-Agent", _twikeyClient.UserAgent);
             request.Headers.Add("Authorization", _twikeyClient.GetSessionToken());
-            request.Headers.Add("Content-Type", "application/json");
 
-            request.Content = new StringContent(JsonConvert.SerializeObject(transaction));
+            var json = JsonConvert.SerializeObject(transaction);
+            var dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
+            request.Content = new FormUrlEncodedContent(dict);
+
             HttpResponseMessage response = _twikeyClient.Send(request);
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -78,7 +83,6 @@ namespace Twikey
                 var responseString = response.Content.ReadAsStringAsync().Result;
                 return JsonConvert.DeserializeObject<Transaction>(responseString);
             }
-
             string apiError = response.Headers.GetValues("ApiError").FirstOrDefault();
             throw new TwikeyClient.UserException(apiError);
         }
